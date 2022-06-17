@@ -19,12 +19,9 @@
 	</nav>
 	<ul id="menu">
 		<li><a href="index.php">Home</a></li> |
-		<li><a href="aboutus.php">About us</a></li> |
-		<li><a href="contactus.php">Contact us</a></li> |
-		<li><a href="gallery.php">Gallery</a></li> |
-		<li><a href="dineandlounge.php">Dine and Lounge</a></li> |
-		<li><a href="reservation.php">Make a reservation</a></li> |
-		<li><a href="rulesandregulation.php">Rules and Regulation</a></li>
+		<li><a href="aboutus.php">Tentang Kami</a></li> |
+		<li><a href="contactus.php">Kontak Kami</a></li> |
+		<li><a href="reservation.php">Reservasi kamar hotel</a></li> |
 	</ul>
 	<div style="margin-left:0;" class="container">
 		<div class="panel panel-default">
@@ -35,7 +32,7 @@
 				<br />
 				<?php
 				require_once 'admin/connect.php';
-				$query = $conn->query("SELECT * FROM `room` WHERE `room_id` = '$_REQUEST[room_id]'") or die(mysql_error());
+				$query = $conn->query("SELECT * FROM `room` WHERE `room_id` = '$_REQUEST[room_id]'") or die();
 				$fetch = $query->fetch_array();
 				?>
 				<div style="height:300px; width:800px;">
@@ -44,7 +41,7 @@
 					</div>
 					<div style="float:left; margin-left:10px;">
 						<h3><?php echo $fetch['room_type'] ?></h3>
-						<h3 style="color:#00ff00;"><?php echo "Php. " . $fetch['price'] . ".00"; ?></h3>
+						<h3 style="color:#00ff00;"><?php echo "Rp. " . $fetch['price'] . ".00"; ?></h3>
 					</div>
 				</div>
 				<br style="clear:both;" />
@@ -88,7 +85,6 @@
 	<br />
 	<br />
 	<div style="text-align:right; margin-right:10px;" class="navbar navbar-default navbar-fixed-bottom">
-		<label>&copy; Copyright HOR 2017 </label>
 	</div>
 </body>
 <script src="js/jquery.js"></script>

@@ -19,12 +19,9 @@
 	</nav>
 	<ul id="menu">
 		<li><a href="index.php">Home</a></li> |
-		<li><a href="aboutus.php">About us</a></li> |
-		<li><a href="contactus.php">Contact us</a></li> |
-		<li><a href="gallery.php">Gallery</a></li> |
-		<li><a href="dineandlounge.php">Dine and Lounge</a></li> |
-		<li><a href="reservation.php">Make a reservation</a></li> |
-		<li><a href="rulesandregulation.php">Rules and Regulation</a></li>
+		<li><a href="aboutus.php">Tentang Kami</a></li> |
+		<li><a href="contactus.php">Kontak Kami</a></li> |
+		<li><a href="reservation.php">Reservasi kamar hotel</a></li> |
 	</ul>
 	<div style="margin-left:0;" class="container">
 		<div class="panel panel-default">
@@ -34,7 +31,7 @@
 				</strong>
 				<?php
 				require_once 'admin/connect.php';
-				$query = $conn->query("SELECT * FROM `room` ORDER BY `price` ASC") or die(mysql_error());
+				$query = $conn->query("SELECT * FROM `room` ORDER BY `price` ASC") or die();
 				while ($fetch = $query->fetch_array()) {
 				?>
 					<div class="well" style="height:300px; width:100%;">
@@ -57,7 +54,6 @@
 	<br />
 	<br />
 	<div style="text-align:right; margin-right:10px;" class="navbar navbar-default navbar-fixed-bottom">
-		<label>&copy; Copyright HOR 2017 </label>
 	</div>
 </body>
 <script src="js/jquery.js"></script>
